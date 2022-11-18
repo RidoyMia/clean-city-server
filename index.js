@@ -13,7 +13,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 const Userscollection = client.db("assignmet-12").collection("Users");
 const Servicescollection = client.db("assignmet-12").collection("Services");
 const Causescollection = client.db("assignmet-12").collection("Causes");
-
+// async function and connect
 async function run(){
     try{
 
@@ -31,7 +31,7 @@ async function run(){
                 hname:body.hname,
                 name : body.name
             };
-           
+           // save
             const result = await Userscollection.insertOne(filter);
             res.send(result)
         });
